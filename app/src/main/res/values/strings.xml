@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">CleanArchitecture</string>
+    <string name="movie_image">Movie image</string>
+    <string name="movie_name">Movie name</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="url">https://image.tmdb.org/t/p/w500/</string>
+</resources>
