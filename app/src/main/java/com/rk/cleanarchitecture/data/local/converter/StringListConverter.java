@@ -13,7 +13,8 @@ public class StringListConverter {
 
     @TypeConverter
     public List<String> fromString(String value) {
-        Type listType = new TypeToken<List<String>>() {}.getType();
+        Type listType = new TypeToken<List<String>>() {
+        }.getType();
         List<String> videos = new Gson().fromJson(value, listType);
         return videos;
     }

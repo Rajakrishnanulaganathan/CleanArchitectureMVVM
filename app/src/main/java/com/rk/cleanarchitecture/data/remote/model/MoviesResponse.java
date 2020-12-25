@@ -4,7 +4,6 @@ import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 import com.rk.cleanarchitecture.data.local.entity.MovieEntity;
 
-
 import java.util.List;
 
 public class MoviesResponse {

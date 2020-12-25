@@ -4,11 +4,11 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-public abstract class Paginationscrolllistner extends RecyclerView.OnScrollListener {
+public abstract class PaginationScrollListener extends RecyclerView.OnScrollListener {
     private LinearLayoutManager layoutManager;
 
 
-    public Paginationscrolllistner(LinearLayoutManager linearLayoutManager) {
+    public PaginationScrollListener(LinearLayoutManager linearLayoutManager) {
         this.layoutManager=linearLayoutManager;
     }
 

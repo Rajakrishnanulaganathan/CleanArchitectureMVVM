@@ -1,7 +1,7 @@
 package com.rk.cleanarchitecture.di.module;
 
+import com.rk.cleanarchitecture.MovieDetailsFragment;
 import com.rk.cleanarchitecture.MovieFragment;
-import com.rk.cleanarchitecture.Moviedetailsfragment;
 
 import dagger.Module;
 import dagger.android.ContributesAndroidInjector;
@@ -13,5 +13,5 @@ public abstract class FragmentModule {
     abstract MovieFragment contributeMovieFragment();
 
     @ContributesAndroidInjector
-    abstract Moviedetailsfragment contributeMovieDetailsFragment();
+    abstract MovieDetailsFragment contributeMovieDetailsFragment();
 }

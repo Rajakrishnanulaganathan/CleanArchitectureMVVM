@@ -3,7 +3,6 @@ package com.rk.cleanarchitecture;
 import android.app.Activity;
 import android.app.Application;
 
-
 import androidx.fragment.app.Fragment;
 
 import com.rk.cleanarchitecture.di.component.DaggerApiComponent;
@@ -12,7 +11,6 @@ import com.rk.cleanarchitecture.di.module.DBModule;
 
 import javax.inject.Inject;
 
-import dagger.android.AndroidInjector;
 import dagger.android.DispatchingAndroidInjector;
 import dagger.android.HasActivityInjector;
 import dagger.android.support.HasSupportFragmentInjector;
@@ -29,7 +27,7 @@ public class MovieApplication extends Application implements HasActivityInjector
     @Override
     public void onCreate() {
         super.onCreate();
-       DaggerApiComponent.builder().application(this).apimodule(new ApiModule()).dbmodule(new DBModule()).build().inject(this);
+        DaggerApiComponent.builder().application(this).apiModule(new ApiModule()).dbModule(new DBModule()).build().inject(this);
     }
 
 

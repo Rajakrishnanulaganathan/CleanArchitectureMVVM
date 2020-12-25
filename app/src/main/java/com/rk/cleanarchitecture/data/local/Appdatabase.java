@@ -11,12 +11,13 @@ import com.rk.cleanarchitecture.data.local.converter.Integertypeconverter;
 import com.rk.cleanarchitecture.data.local.dao.MovieDao;
 import com.rk.cleanarchitecture.data.local.entity.MovieEntity;
 
-@Database(entities = MovieEntity.class,version = 2,exportSchema = false)
+@Database(entities = MovieEntity.class, version = 2, exportSchema = false)
 @TypeConverters(Integertypeconverter.class)
 public abstract class Appdatabase extends RoomDatabase {
 
 
     private static volatile Appdatabase INSTANCE;
+
     public static Appdatabase getInstance(Context context) {
         if (INSTANCE == null) {
             synchronized (Appdatabase.class) {

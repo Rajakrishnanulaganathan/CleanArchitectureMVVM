@@ -4,7 +4,6 @@ import com.rk.cleanarchitecture.data.local.entity.MovieEntity;
 import com.rk.cleanarchitecture.data.remote.model.MoviesResponse;
 
 import io.reactivex.Observable;
-import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Path;
 import retrofit2.http.Query;

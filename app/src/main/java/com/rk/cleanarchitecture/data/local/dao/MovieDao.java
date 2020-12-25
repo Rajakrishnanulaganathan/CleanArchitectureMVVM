@@ -13,12 +13,12 @@ import static androidx.room.OnConflictStrategy.IGNORE;
 @Dao
 public interface MovieDao {
 
-     @Insert(onConflict = IGNORE)
-     long[] insertmovies(List<MovieEntity> movieEntity);
+    @Insert(onConflict = IGNORE)
+    long[] insertMovies(List<MovieEntity> movieEntity);
 
-     @Query("select * from movies")
-     List<MovieEntity> getallmovies();
+    @Query("select * from movies")
+    List<MovieEntity> getAllMovies();
 
-     @Query("select * from movies where id=:id")
-     MovieEntity getmovie(int id);
+    @Query("select * from movies where id=:id")
+    MovieEntity getMovie(int id);
 }

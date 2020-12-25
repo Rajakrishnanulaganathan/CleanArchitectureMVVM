@@ -20,7 +20,7 @@ public class PopularMovieAdapter extends RecyclerView.Adapter<PopularMovieAdapte
 
     private Context mContext;
     protected List<MovieEntity> mPopularMovieList;
-    private ClickListner clickListner;
+    private ClickListener clickListner;
 
     public PopularMovieAdapter(Context context) {
         this.mContext = context;
@@ -49,7 +49,7 @@ public class PopularMovieAdapter extends RecyclerView.Adapter<PopularMovieAdapte
         return mPopularMovieList.size();
     }
 
-    public void setonclicklistner(ClickListner clickListner) {
+    public void setonclicklistner(ClickListener clickListner) {
         this.clickListner=clickListner;
     }
 
@@ -63,7 +63,7 @@ public class PopularMovieAdapter extends RecyclerView.Adapter<PopularMovieAdapte
                 @Override
                 public void onClick(View v) {
 
-                    clickListner.clickitems(getAdapterPosition());
+                    clickListner.Onclick(getAdapterPosition());
 
                 }
             });

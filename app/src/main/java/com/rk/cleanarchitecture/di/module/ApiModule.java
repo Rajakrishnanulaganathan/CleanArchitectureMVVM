@@ -27,8 +27,8 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class ApiModule {
     @Provides
     @Singleton
-    Gson providegson(){
-        GsonBuilder gsonBuilder=new GsonBuilder();
+    Gson provideGson() {
+        GsonBuilder gsonBuilder = new GsonBuilder();
         return gsonBuilder.create();
     }
 
@@ -48,10 +48,9 @@ public class ApiModule {
 
     @Provides
     @Singleton
-    OkHttpClient provideOkhttpClient(Cache cache, NetworkInterceptor networkInterceptor) {
+    OkHttpClient provideOkHttpClient(Cache cache, NetworkInterceptor networkInterceptor) {
         HttpLoggingInterceptor logging = new HttpLoggingInterceptor();
         logging.setLevel(HttpLoggingInterceptor.Level.BODY);
-
         OkHttpClient.Builder httpClient = new OkHttpClient.Builder();
         httpClient.cache(cache);
         httpClient.addInterceptor(networkInterceptor);
@@ -64,14 +63,14 @@ public class ApiModule {
 
     @Singleton
     @Provides
-    Retrofit provideRetrofit(Gson gson,OkHttpClient okHttpClient){
-        return new Retrofit.Builder().baseUrl(Constants.ENDPOINT). addCallAdapterFactory(RxJava2CallAdapterFactory.create())
+    Retrofit provideRetrofit(Gson gson, OkHttpClient okHttpClient) {
+        return new Retrofit.Builder().baseUrl(Constants.ENDPOINT).addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .addConverterFactory(GsonConverterFactory.create(gson)).client(okHttpClient).build();
     }
 
     @Provides
     @Singleton
-    ApiService provideApiService(Retrofit retrofit){
+    ApiService provideApiService(Retrofit retrofit) {
         return retrofit.create(ApiService.class);
     }
 }

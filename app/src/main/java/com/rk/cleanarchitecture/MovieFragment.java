@@ -24,11 +24,11 @@ import javax.inject.Inject;
 
 import dagger.android.support.AndroidSupportInjection;
 
-public class MovieFragment extends BaseFragment implements ClickListner {
+public class MovieFragment extends BaseFragment implements ClickListener {
 
     private PopularMovieAdapter popularMovieAdapter;
     private List<MovieEntity> articleArrayList = new ArrayList<>();
-    private PopularMovieViewmodel popularMovieViewmodel;
+    private PopularMovieViewModel popularMovieViewmodel;
     private FragmentMovieBinding fragmentMovieBinding;
 
     @Inject
@@ -40,7 +40,7 @@ public class MovieFragment extends BaseFragment implements ClickListner {
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         AndroidSupportInjection.inject(this);
-        popularMovieViewmodel = ViewModelProviders.of(this,viewModelFactory).get(PopularMovieViewmodel.class);
+        popularMovieViewmodel = ViewModelProviders.of(this,viewModelFactory).get(PopularMovieViewModel.class);
 
     }
 
@@ -83,9 +83,9 @@ public class MovieFragment extends BaseFragment implements ClickListner {
 
 
     @Override
-    public void clickitems(int position) {
+    public void Onclick(int position) {
         Log.d("logmessage",String.valueOf(articleArrayList.get(position).getTitle()));
-        ((MainActivity) getActivity()).moviedetailsfragment(articleArrayList.get(position).getId());
+        ((MainActivity) getActivity()).switchDetailsFragment(articleArrayList.get(position).getId());
 
 
     }

@@ -21,10 +21,10 @@ import javax.inject.Inject;
 
 import dagger.android.support.AndroidSupportInjection;
 
-public class Moviedetailsfragment extends BaseFragment {
+public class MovieDetailsFragment extends BaseFragment {
 
     ActivityMovieDetailsBinding activityMovieDetailsBinding;
-    PopularMovieViewmodel popularMovieGetViewmodel;
+    PopularMovieViewModel popularMovieGetViewmodel;
 
     @Inject
     ViewModelFactory viewModelFactory;
@@ -34,14 +34,15 @@ public class Moviedetailsfragment extends BaseFragment {
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         AndroidSupportInjection.inject(this);
-        popularMovieGetViewmodel = ViewModelProviders.of(this,viewModelFactory).get(PopularMovieViewmodel.class);    }
+        popularMovieGetViewmodel = ViewModelProviders.of(this, viewModelFactory).get(PopularMovieViewModel.class);
+    }
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        activityMovieDetailsBinding= DataBindingUtil.inflate(inflater,R.layout.activity_movie_details,container,false);
-        View view=activityMovieDetailsBinding.getRoot();
-        Bundle bundle=this.getArguments();
+        activityMovieDetailsBinding = DataBindingUtil.inflate(inflater, R.layout.activity_movie_details, container, false);
+        View view = activityMovieDetailsBinding.getRoot();
+        Bundle bundle = this.getArguments();
         popularMovieGetViewmodel.getmoviedetails(String.valueOf(bundle.getInt("id")));
         popularMovieGetViewmodel.getMoviesResponseDetailsMutableLiveData().observe(getViewLifecycleOwner(), new Observer<MovieEntity>() {
             @Override
@@ -54,8 +55,9 @@ public class Moviedetailsfragment extends BaseFragment {
 
         return view;
     }
+
     private void addMovieDetails(MovieEntity movieEntity) {
-        Picasso.get().load(Constants.IMAGE_ENDPOINT_PREFIX+movieEntity.getPosterPath()).into(activityMovieDetailsBinding.imageViewCover);
+        Picasso.get().load(Constants.IMAGE_ENDPOINT_PREFIX + movieEntity.getPosterPath()).into(activityMovieDetailsBinding.imageViewCover);
 
     }
 

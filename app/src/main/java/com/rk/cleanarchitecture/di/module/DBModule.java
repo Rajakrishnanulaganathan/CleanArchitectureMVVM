@@ -18,7 +18,7 @@ import dagger.Provides;
 public class DBModule {
     @Provides
     @Singleton
-    Appdatabase providedb(@NonNull Application application){
+    Appdatabase provideDb(@NonNull Application application){
         return Room.databaseBuilder(application,
                 Appdatabase.class, "Entertainment.db")
                 .allowMainThreadQueries().build();
@@ -26,7 +26,7 @@ public class DBModule {
 
     @Provides
     @Singleton
-    MovieDao providemoviedao(@NonNull Appdatabase appdatabase){
+    MovieDao provideMovieDao(@NonNull Appdatabase appdatabase){
      return appdatabase.movieDao();
     }
 }
