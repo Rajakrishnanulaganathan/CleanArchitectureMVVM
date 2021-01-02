@@ -16,21 +16,22 @@ import dagger.Component;
 import dagger.android.support.AndroidSupportInjectionModule;
 
 @Singleton
-@Component(modules = {AndroidSupportInjectionModule.class,ActivityModule.class, ApiModule.class, DBModule.class, ViewModelModule.class, FragmentModule.class})
+@Component(modules = {AndroidSupportInjectionModule.class, ActivityModule.class, ApiModule.class, DBModule.class, ViewModelModule.class, FragmentModule.class})
 public interface ApiComponent {
 
+    void inject(MovieApplication application);
+
     @Component.Builder
-    interface Builder{
+    interface Builder {
         @BindsInstance
         Builder application(Application application);
 
         @BindsInstance
-        Builder dbmodule(DBModule dbModule);
+        Builder dbModule(DBModule dbModule);
 
         @BindsInstance
-        Builder apimodule(ApiModule apiModule);
+        Builder apiModule(ApiModule apiModule);
 
         ApiComponent build();
     }
-    void inject(MovieApplication application);
 }

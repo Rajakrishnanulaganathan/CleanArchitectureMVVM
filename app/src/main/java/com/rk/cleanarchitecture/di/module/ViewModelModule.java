@@ -3,7 +3,7 @@ package com.rk.cleanarchitecture.di.module;
 import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.rk.cleanarchitecture.PopularMovieViewmodel;
+import com.rk.cleanarchitecture.PopularMovieViewModel;
 import com.rk.cleanarchitecture.factory.ViewModelFactory;
 
 import dagger.Binds;
@@ -17,6 +17,6 @@ public abstract class ViewModelModule {
 
     @Binds
     @IntoMap
-    @ViewModelKey(PopularMovieViewmodel.class)
-    protected abstract ViewModel movieListViewModel(PopularMovieViewmodel popularMovieViewmodel);
+    @ViewModelKey(PopularMovieViewModel.class)
+    protected abstract ViewModel movieListViewModel(PopularMovieViewModel popularMovieViewmodel);
 }

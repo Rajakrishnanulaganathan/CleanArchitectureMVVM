@@ -11,28 +11,10 @@ import java.io.Serializable;
 
 @Entity(tableName = "movies")
 public class MovieEntity implements Serializable {
-    public Long getPage() {
-        return page;
-    }
-
-    public void setPage(Long page) {
-        this.page = page;
-    }
-
-    public Long getTotalPages() {
-        return totalPages;
-    }
-
-    public void setTotalPages(Long totalPages) {
-        this.totalPages = totalPages;
-    }
-
     @Expose
     private Long page;
-
     @Expose
     private Long totalPages;
-
     @SerializedName("popularity")
     @Expose
 
@@ -63,7 +45,6 @@ public class MovieEntity implements Serializable {
     @PrimaryKey
     @NonNull
     private String originalTitle;
-
     @SerializedName("title")
     @Expose
     private String title;
@@ -76,6 +57,22 @@ public class MovieEntity implements Serializable {
     @SerializedName("release_date")
     @Expose
     private String releaseDate;
+
+    public Long getPage() {
+        return page;
+    }
+
+    public void setPage(Long page) {
+        this.page = page;
+    }
+
+    public Long getTotalPages() {
+        return totalPages;
+    }
+
+    public void setTotalPages(Long totalPages) {
+        this.totalPages = totalPages;
+    }
 
     public Double getPopularity() {
         return popularity;

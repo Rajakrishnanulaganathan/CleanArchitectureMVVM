@@ -11,6 +11,7 @@ import okhttp3.Response;
 public class NetworkInterceptor implements Interceptor {
 
     private Context context;
+
     public NetworkInterceptor(Context context) {
         this.context = context;
     }
@@ -18,7 +19,7 @@ public class NetworkInterceptor implements Interceptor {
     @Override
     public Response intercept(Chain chain) throws IOException {
         Request request = chain.request();
-        if(ConnectivityStatus.isConnected(context)) {
+        if (ConnectivityStatus.isConnected(context)) {
             request.newBuilder()
                     .header("Cache-Control", "public, max-age=" + 60)
                     .build();
